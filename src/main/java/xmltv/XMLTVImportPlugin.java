@@ -1794,6 +1794,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
         }
     }
 
+    // TODO check to put the right title to SageTV correctly handling the rerun shows
     /**
      * Adds the current show.
      */
@@ -1850,7 +1851,9 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                 }
 
                 String title = this.show.title;
-                String rerunTitle = null;
+                // FIXME handling rerun shows correctly with SageTV 9
+                // String rerunTitle = null;
+                String rerunTitle = this.show.title;
                 String episodeName = this.show.episodeName;
                 if (this.initcapAllChannelIds
                         || this.initcapChannelIds
@@ -1886,7 +1889,8 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                 }
                 if (this.show.rerun) {
                     rerunTitle = title;
-                    title = null;
+                    // FIXME handling rerun shows correctly with SageTV 9
+                    //title = null;
                 }
                 if (this.episodeNameAddEpisodeNumber
                         && this.show.freeFormEpisodeNumber != null) {
@@ -2003,6 +2007,11 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
 
                 String showId = generateShowId(category);
 
+                /*
+                 * Add the show now to SageTV EPG
+                 * rerunTitle and title meaning is not fully clear needs more documentation or links
+                 * @see EPGDBPublic.addShowPublic()
+                  */
                 if (!this.guide.addShowPublic(rerunTitle, title, episodeName,
                         desc, 0L, category, subCategory,
                         toStringArray(this.show.people), this.show.roles

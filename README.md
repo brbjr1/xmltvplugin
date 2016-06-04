@@ -12,6 +12,12 @@ git clone https://github.com/yafraorg/xmltvplugin.git
 
 a zip file will be under build/distribution including a classes and basic configuration files
 
+### unit tests
+```bash
+./gradlew test
+```
+needs some mockup files locally in order to run (see folder testdata)
+
 ## Install
 http://forums.sagetv.com/forums/showthread.php?t=17363
 

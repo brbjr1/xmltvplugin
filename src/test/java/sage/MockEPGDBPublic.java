@@ -2646,7 +2646,17 @@ public class MockEPGDBPublic implements sage.EPGDBPublic,
 		return ((Boolean) returnValue).booleanValue();
 	}
 
-	public void expectAddAiringPublic(java.lang.String p0_String, int p1_int,
+    @Override
+    public boolean addAiringDetailedPublic(String extID, int stationID, long startTime, long duration, int partNumber, int totalParts, String parentalRating, boolean hdtv, boolean stereo, boolean closedCaptioning, boolean sap, boolean subtitled, String premierFinale) {
+        return false;
+    }
+
+    @Override
+    public boolean addSeriesInfoPublic(int seriesID, String title, String network, String description, String history, String premiereDate, String finaleDate, String airDOW, String airHrMin, String imageURL, String[] people, String[] characters) {
+        return false;
+    }
+
+    public void expectAddAiringPublic(java.lang.String p0_String, int p1_int,
 			long p2_long, long p3_long, boolean valueToReturn) {
 		if (LOG.isDebugEnabled()) {
 			LOG.debug("expectAddAiringPublic("
