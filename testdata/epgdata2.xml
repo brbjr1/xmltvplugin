@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv date="00010203040506 +1234" source-info-url="source-info-url"
+	source-info-name="source-info-name" source-data-url="source-data-url"
+	generator-info-name="generator-info-name"
+	generator-info-url="generator-info-url">
+	<channel id="ch2">
+		<display-name lang="en">Channel 2</display-name>
+		<display-name lang="nl">Zender 2</display-name>
+		<icon src="icon 1"/>
+		<icon src="icon 2" width="1" height="2"/>
+		<url>url 1</url>
+		<url>url 2</url>
+	</channel>
+	<programme start="300202020202 +1234" stop="300202020203 +1234"
+		pdc-start="pdc-start" vps-start="vps-start" showview="showview"
+		videoplus="videoplus" channel="ch2" clumpidx="clumpidx">
+		<title lang="en">Title 2</title>
+		<title lang="nl">Titel 2 the quick brown fox</title>
+		<sub-title lang="en">SubTitle</sub-title>
+		<sub-title lang="nl">SubTitel</sub-title>
+		<desc lang="en">Description</desc>
+		<desc lang="nl">Omschrijving</desc>
+		<credits>
+			<director>Director 1</director>
+			<director>Director 2</director>
+			<actor>Actor 1 (character 1)</actor>
+			<actor>Actor 2 (character 2);Actor 3 as character 3</actor>
+			<writer>Writer 1</writer>
+			<writer>Writer 2</writer>
+			<adapter>Adapter 1</adapter>
+			<adapter>Adapter 2</adapter>
+			<producer>Producer 1</producer>
+			<producer>Producer 2</producer>
+			<presenter>Presenter 1</presenter>
+			<presenter>Presenter 2 e.a</presenter>
+			<commentator>Commentator 1</commentator>
+			<commentator>Commentator 2 e.a.</commentator>
+			<guest>Guest 1, Guest 2 and Guest 3 en Guest 4</guest>
+		</credits>
+		<date>0003</date>
+		<category lang="nl">Actie-</category>
+		<category>Avonturenfilm</category>
+		<category>Nieuws</category>
+		<language lang="en">English</language>
+		<orig-language lang="nl">Engels</orig-language>
+		<length units="minutes">20</length>
+		<icon src="icon 3"/>
+		<icon src="icon 4" width="3" height="4"/>
+		<url>url 3</url>
+		<url>url 4</url>
+		<country>US</country>
+		<country lang="nl">Nederland</country>
+		<episode-num system="xmltv_ns">0/2.2/4.4/6</episode-num>
+		<video>
+			<present>yes</present>
+			<colour>yes</colour>
+			<aspect>14:9</aspect>
+			<quality>HDTV</quality>
+		</video>
+		<audio>
+			<present>yes</present>
+			<stereo>mono</stereo>
+		</audio>
+		<previously-shown start="300101010101" channel="ch1"/>
+		<premiere lang="en">premiere text</premiere>
+		<last-chance lang="en">last-chance text</last-chance>
+		<new/>
+		<subtitles type="onscreen">
+			<language>NL</language>
+		</subtitles>
+		<subtitles type="teletext">
+			<language lang="en">English</language>
+		</subtitles>
+		<rating system="MPAA">
+			<value>NC-17</value>
+		</rating>
+		<rating system="USA">
+			<value>TV-MA-V</value>
+			<icon src="icon 5"/>
+			<icon src="icon 6" width="5" height="6"/>
+		</rating>
+		<star-rating>
+			<value>1/5</value>
+			<icon src="icon 7"/>
+			<icon src="icon 8" width="7" height="8"/>
+		</star-rating>
+	</programme>
+	<programme start="300202020203 +1234" stop="300202020204 +1234" channel="ch2">
+		<title>Test Single Category</title>
+		<date>30000201</date>
+		<category>Single</category>
+		<episode-num system="xmltv_ns">.2./6</episode-num>
+		<rating system="system">
+			<value>NC-17</value>
+		</rating>
+		<rating>
+			<value>TV-14-S</value>
+		</rating>
+		<star-rating>
+			<value>1/10</value>
+		</star-rating>
+	</programme>
+	<programme start="200202020203 +1234" stop="200202020204 +1234" channel="ch2">
+		<title>Test Started Show</title>
+	</programme>
+	<programme start="300202020203 +1234" stop="300202020204 +1234" channel="ch2">
+		<title>Test Valid Char &#233;</title>
+		<category>Actie-/Avonturenfilm</category>
+		<!-- TODO: split combined categories. -->
+		<episode-num system="xmltv_ns">..0</episode-num>
+		<rating>
+			<value>Afgeraden voor kinderen jonger dan 6 jaar</value>
+		</rating>
+		<rating>
+			<value>Angst</value>
+		</rating>
+		<rating>
+			<value>Discriminatie</value>
+		</rating>
+		<rating system="rating-system">
+			<value>rating-value</value>
+		</rating>
+		<star-rating>
+			<value>9/10</value>
+		</star-rating>
+	</programme>
+	<programme start="300202020203 +1234" stop="300202020204 +1234" channel="ch2">
+		<title>Test Invalid Char &#x1C;</title>
+		<sub-title>SubTitle</sub-title>
+		<date>30000201</date>
+		<category>Serie</category>
+	</programme>
+	<programme start="300202020203 +1234" stop="30020202020401 +1234"
+		channel="ch2">
+		<title>Test subcategory without category</title>
+		<category>Overige</category>
+		<category>Drama</category>
+	</programme>
+	<programme start="300202020203 +1234" stop="300202020204 +1234" channel="ch2">
+		<title>Test no-episode</title>
+		<category>Serie</category>
+	</programme>
+	<programme start="300202020203 +1234" stop="300202020204 +1234" channel="ch2">
+		<title>Test no-date</title>
+		<category>Nieuws</category>
+	</programme>
+	<programme start="300202020203 +1234" stop="300202020204 +1234" channel="ch2">
+		<title>Test dd_progid</title>
+		<episode-num system="dd_progid">EP808403.0006</episode-num>
+		<episode-num system="xmltv_ns">1/5.10/20.</episode-num>
+	</programme>
+</tv>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv date="00010203040506 +1234" source-info-url="source-info-url"
+	source-info-name="source-info-name" source-data-url="source-data-url"
+	generator-info-name="generator-info-name"
+	generator-info-url="generator-info-url">
+	<channel id="ch1">
+		<display-name>Channel 1</display-name>
+	</channel>
+	<channel id="ch3">
+		<display-name>Channel 3</display-name>
+	</channel>
+	<programme start="300101010100 +1234" channel="ch1">
+		<title>Test no endtime.</title>
+	</programme>
+	<programme start="300101010101 +1234" stop="300101010102 +1234" channel="ch1">
+		<title>title 1</title>
+	</programme>
+	<programme start="300101010101 +1234" stop="300101010102 +1234" channel="ch3">
+		<title>Title on channel 3</title>
+	</programme>
+	<programme start="300101010101 +1234" stop="300101010102 +1234" channel="ch4">
+		<title>Title on channel 4</title>
+	</programme>
+</tv>
