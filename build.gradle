@@ -33,7 +33,7 @@ dependencies {
 task buildZip(type: Zip) {
     classifier = 'src'
     from projectDir
-    include 'build/**/*'
+    include 'build/classes/main/xmltv/**/*'
     include 'testdata/**/*'
 }
 assemble.dependsOn(buildZip)
