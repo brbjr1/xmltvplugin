@@ -47,5 +47,21 @@ tune in and the tuner works, however you most likely miss the EPG data so far.
  * select the XMLTV Lineup
  * optionally you can upload an icon set which fits to the channel names
 
+### Automatic installation
+to be done :-)
+
 ## EPG XMLT guide grabber
 See https://github.com/yafraorg/docker-yafraepg for a docker based running XMLTV generator.
+
+## References
+The source code goes back to the early days of SageTV and was developed by various persons also active on the
+SageTV Forum. Some links shall show the references:
+
+ * XMLTVImportPlugin from Demideus http://forums.sagetv.com/forums/showthread.php?t=12740
+ * XMLTVImportPlugin from Demideus on Channel IDs http://forums.sagetv.com/forums/showthread.php?p=141039
+ * XMLTV HowTo http://forums.sagetv.com/forums/showthread.php?t=17363
+ * New Home on GitHub https://github.com/yafraorg/xmltvplugin.git
+
+## Support
+Log issues on GitHub.com or fork the repo and contribute if you like.
+See as well Forum Thread http://forums.sagetv.com/forums/showthread.php?t=63249
