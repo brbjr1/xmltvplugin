@@ -37,4 +37,15 @@ task buildZip(type: Zip) {
     include 'build/classes/main/xmltv/**/*'
     include 'testdata/**/*'
 }
-assemble.dependsOn(buildZip)
+
+//create a single Jar with all dependencies
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle XMTLV Jar',
+                'Implementation-Version': version,
+                'Main-Class': 'xmltv.XMLTVImportPlugin'
+    }
+    exclude('sage/**')
+}
+
+assemble.dependsOn(buildZip, jar)

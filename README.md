@@ -25,11 +25,11 @@ http://forums.sagetv.com/forums/showthread.php?t=17363
 It is assumed that your SageTV server is up and running and that you configured a tuner but without EPG. You can
 tune in and the tuner works, however you most likely miss the EPG data so far.
 
- * compile the XMLTVImportPlugin to class files
- * transport the classes and configs to your sagetv server/directory
+ * run ./gradlew assemble and copy build/libs/xmltv-1.0.xxx.jar to your sagetv server
+ * transport the configs to your sagetv server (or extract them from the jar)
  * stop sagetv server
+ * mv the xmltv-xxxx.jar to JARs/ directory on your sagetv server
  * edit Sage.properties and enable the plugin with: ``epg/epg_import_plugin=xmltv.XMLTVImportPlugin``
- * create the xmltv/ directory and copy the class files into it
  * copy the following files into the sagetv server/directory
    * xmltv.properties
    * epgdata.xml
