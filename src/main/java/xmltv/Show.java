@@ -74,6 +74,18 @@ public class Show {
      */
     String year;
 
+    //bbehrens
+     /**
+     * The date that the show first aired.
+     */
+    Date previouslyShown;
+
+    //bbehrens
+     /**
+     * Is marked as new show.
+     */
+    boolean isNew;
+
     /**
      * The date that the show was finished.
      */
