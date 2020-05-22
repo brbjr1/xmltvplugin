@@ -1812,10 +1812,9 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
             try {
 
 
-                if (this.show.isNew == true)
-                {
-                    //this.show.rerun = false;
-                }
+               // if (this.show.isNew == true){
+               //     this.show.rerun = false;
+               // }
 
                 LinkedList categories = translateCategories(this.show.categories);
                 if (!this.categoriesForStarRating.isEmpty()
@@ -1899,12 +1898,29 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                                 .toString();
                     }
                 }
-                if (this.show.rerun && this.show.isNew == false) {
+                if (this.show.rerun) {
                     rerunTitle = title;
                     // FIXME handling rerun shows correctly with SageTV 9
                     //title = null;
                 }
-                
+                //bbehrens custom
+                /*
+                if (this.show.rerun && this.show.isNew == false) {
+                    rerunTitle = title;
+                    // FIXME handling rerun shows correctly with SageTV 9
+                    //title = null;
+                } else if (this.show.rerun){
+                    rerunTitle = title;
+                }else {
+                    rerunTitle = null;
+                }
+
+                if (this.show.isNew == true){
+                    rerunTitle = null;
+                } else {
+                    title = null;
+                }
+                */
 
                 if (this.episodeNameAddEpisodeNumber && this.show.freeFormEpisodeNumber != null) {
                     if (episodeName == null) {
@@ -2022,7 +2038,7 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                 //bbehrens
                 long originalAirDate = 0L;
                 //if (this.show.previouslyShown != null && this.show.isNew == true)
-                if (this.show.isNew == true && this.show.previouslyShown != null)
+                if (this.show.previouslyShown != null)
                 {
                     originalAirDate = this.show.previouslyShown.getTime();  
                     //originalAirDate = this.show.start.getTime();
@@ -2247,8 +2263,10 @@ public final class XMLTVImportPlugin implements sage.EPGImportPlugin,
                     return DF_MINUTES.parse(aXmltvDate);
                 case 14:
                     return DF_SECONDS.parse(aXmltvDate);
+                default:
+                    return DF_DAY.parse(aXmltvDate);
                 }
-                throw new ParseException("Unknown date format: " + aXmltvDate, 0);
+                //throw new ParseException("Unknown date format: " + aXmltvDate, 0);
             } catch (ParseException e) {
                 log(e);
             }
